@@ -1,7 +1,7 @@
 #ifndef _USER_PROGRAM_H_
 #define _USER_PROGRAM_H_
 
-#define SAMPLE_HOLD
+#define MASTER_CLK
 
 void setup(void);
 void start(void);

@@ -12,5 +12,6 @@
 #include "programs/wavetable_lfo/config.h"
 #include "programs/blinky/config.h"
 #include "programs/sample_hold/config.h"
+#include "programs/master_clock/config.h"
 
 #endif // _CTRL_ALT_HW_CONFIG_
