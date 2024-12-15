@@ -1,7 +1,7 @@
 #ifndef _USER_PROGRAM_H_
 #define _USER_PROGRAM_H_
 
-#define WAVETABLE_LFO
+#define SAMPLE_HOLD
 
 void setup(void);
 void start(void);
