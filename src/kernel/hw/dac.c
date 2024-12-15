@@ -80,7 +80,8 @@ void tim3_update_it_callback(void)
         dac_update_flag = 1;
         c = 0;
     }
-
+#else
+    dac_update_flag = 1;
 #endif
 }
 
