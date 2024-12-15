@@ -28,6 +28,8 @@ void main(void)
     start_dac();
 #endif
 
+    start();
+
     while (1)
     {
 #if (OUTPUT0 == ANALOG_OUT || OUTPUT2 == ANALOG_OUT || OUTPUT2 == ANALOG_OUT)
