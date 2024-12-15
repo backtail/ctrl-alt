@@ -1,5 +1,5 @@
-#ifndef _PROGRAMS_CONFIG_H_
-#define _PROGRAMS_CONFIG_H_
+#ifndef _WAVETABLE_LFO_CONFIG_H_
+#define _WAVETABLE_LFO_CONFIG_H_
 
 #include "user_program.h"
 
