@@ -9,7 +9,7 @@
 #define OUTPUT1 DIGTAL_OUT
 #define OUTPUT2 DIGTAL_OUT
 
-#define ADC_SAMPLE_RATE 50.0f
+#define ADC_SAMPLE_RATE 100.0f
 
 // unused
 #define DAC_SAMPLE_RATE 0.0f

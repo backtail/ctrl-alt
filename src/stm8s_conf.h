@@ -10,7 +10,7 @@
 #include "stm8s_clk.h"
 #include "stm8s_gpio.h"
 #include "stm8s_exti.h"
-#include "stm8s_tim1.h"
+// #include "stm8s_tim1.h"
 #include "stm8s_tim3.h"
 
 // user program depencenies
