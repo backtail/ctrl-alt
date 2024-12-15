@@ -31,6 +31,7 @@ INTERRUPT_HANDLER(EEPROM_EEC_IRQHandler, 24);           /* EEPROM ECC CORRECTION
 
 // these function pointers can be used by user programs
 extern void (*it_exti_portd_handler)(void);
+extern void (*it_tim1_upd_ovf_brk_handler)(void);
 extern void (*it_tim3_upd_ovf_brk_handler)(void);
 
 #endif /* _KERNEL_INTERRUPTS_ */

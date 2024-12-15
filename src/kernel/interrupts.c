@@ -12,6 +12,7 @@ void (*it_tim2_upd_ovf_brk_handler)(void) = NULL_POINTER;
 ///////////////////////////
 
 void (*it_exti_portd_handler)(void) = NULL_POINTER;
+void (*it_tim1_upd_ovf_brk_handler)(void) = NULL_POINTER;
 void (*it_tim3_upd_ovf_brk_handler)(void) = NULL_POINTER;
 
 INTERRUPT_HANDLER_TRAP(TRAP_IRQHandler) {}
@@ -24,7 +25,7 @@ INTERRUPT_HANDLER(EXTI_PORTC_IRQHandler, 5) {}
 INTERRUPT_HANDLER(EXTI_PORTD_IRQHandler, 6) { it_exti_portd_handler(); }
 INTERRUPT_HANDLER(EXTI_PORTE_IRQHandler, 7) {}
 INTERRUPT_HANDLER(SPI_IRQHandler, 10) {}
-INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11) {}
+INTERRUPT_HANDLER(TIM1_UPD_OVF_TRG_BRK_IRQHandler, 11) { it_tim1_upd_ovf_brk_handler(); }
 INTERRUPT_HANDLER(TIM1_CAP_COM_IRQHandler, 12) {}
 INTERRUPT_HANDLER(TIM2_UPD_OVF_BRK_IRQHandler, 13) { it_tim2_upd_ovf_brk_handler(); }
 INTERRUPT_HANDLER(TIM2_CAP_COM_IRQHandler, 14) {}
