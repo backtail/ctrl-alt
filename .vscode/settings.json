@@ -2,6 +2,7 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "*.S": "arm",
-        "stm8s_tim3.h": "c"
+        "stm8s_tim3.h": "c",
+        "random": "cpp"
     }
 }

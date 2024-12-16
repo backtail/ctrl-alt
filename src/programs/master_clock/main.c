@@ -12,59 +12,156 @@
 #include "kernel/k_lib/k_timer_calc.h"
 #include "stm8s_tim3.h"
 
+#include "clamp.h"
 #include "lerp_lut.h"
+#include "lerp.h"
 #include "math.h"
 
 #define SYSTICK 100 // us
-#define LUT_SIZE 64
+#define LUT_SIZE 512
 #define LUT_MAX_VAL (1023)
 
 uint16_t time_log_lut[LUT_SIZE] = {0};
 
-uint32_t systick_counter = 0;
-
+bool mult_1_clk_state = 1;
+bool mult_2_clk_state = 1;
 bool master_clk_state = 1;
-uint32_t master_clk_edge = 10000;
+uint32_t master_full_cycle = 100;
 
-bool mult_clk_state = 1;
-uint32_t mult_clk_edge = 10000;
+uint8_t mult_1 = 0;
+uint8_t mult_2 = 0;
+
+uint8_t master_shift = 0;
+uint8_t mult_1_shift = 0;
+uint8_t mult_2_shift = 0;
+
+uint32_t lerp(uint32_t a, uint32_t b, uint16_t weight)
+{
+    uint16_t complement_weight = 1023 - weight;
+
+    // Compute weighted contributions
+    uint32_t contrib1 = (uint32_t)complement_weight * a;
+    uint32_t contrib2 = (uint32_t)weight * b;
+
+    // Combine and normalize
+    return ((contrib1 + contrib2) >> 10);
+}
 
 void update_clocks()
 {
-    uint16_t time = interpolate_lut(1023 - get_adc(POT0), time_log_lut, LUT_MAX_VAL, LUT_SIZE);
-    master_clk_edge = 1024 + (time << 3);
-    if (master_clk_state == mult_clk_state)
-        mult_clk_edge = master_clk_edge >> (get_adc(POT1) >> 8);
+    // uint16_t param0 = clamp_10_bit(1023 - get_adc(POT0) + 1023 - get_adc(CV0));
+    uint16_t pot0 = 1023 - get_adc(POT0);
+    uint16_t cv0 = get_adc(CV0);
+    uint16_t param0 = clamp_10_bit(pot0 + cv0);
+    uint16_t master_time = time_log_lut[param0 >> 1]; // log LUT conversion
+    master_full_cycle = 100 + (master_time << 2);
+
+    mult_1 = clamp_10_bit(get_adc(POT1) + get_adc(CV1)) >> 8;
+    mult_2 = clamp_10_bit(get_adc(POT2) + get_adc(CV2)) >> 8;
 }
 
-void exti_it_callback() {}
+void exti_it_callback()
+{
+    if (read_pin(&IN0))
+    {
+        master_shift++;
+        set_pin(&LED0, HIGH);
+    }
+
+    if (read_pin(&IN1))
+    {
+        mult_1_shift++;
+        set_pin(&LED1, HIGH);
+    }
+
+    if (read_pin(&IN2))
+    {
+        mult_2_shift++;
+        set_pin(&LED2, HIGH);
+    }
+
+    if (read_pin(&TRIGGER_SWITCH))
+    {
+        master_shift = 0;
+        mult_1_shift = 0;
+        mult_2_shift = 0;
+
+        set_pin(&LED0, HIGH);
+        set_pin(&LED1, HIGH);
+        set_pin(&LED2, HIGH);
+    }
+}
 
 void tim3_it_callback()
 {
     TIM3_ClearITPendingBit(TIM3_IT_UPDATE);
 
-    static uint32_t last_master_clk_edge;
-    static uint32_t last_mult_clk_edge;
+    static uint32_t systick_counter; // ticks @100us
+    static uint32_t last_systick;    // timestamp of last systick occurence
 
-    if (systick_counter - last_mult_clk_edge >= mult_clk_edge)
+    static uint32_t master_clk_rising; // time at which resp. clock signal rose
+    static uint32_t mult_1_clk_rising; // time at which resp. clock signal rose
+    static uint32_t mult_2_clk_rising; // time at which resp. clock signal rose
+
+    if (systick_counter - last_systick >= master_full_cycle)
     {
-        last_mult_clk_edge = systick_counter; // update
+        static uint8_t edge_counter;
 
-        set_pin(&OUT1, mult_clk_state);
-        mult_clk_state ^= 1;
-    }
-
-    if (systick_counter - last_master_clk_edge >= master_clk_edge)
-    {
-        last_master_clk_edge = systick_counter; // update
-
-        if (mult_clk_state)
-            last_mult_clk_edge = systick_counter; // sync multiplier
-
-        set_pin(&OUT0, master_clk_state);
-        master_clk_state ^= 1;
+        last_systick = systick_counter; // update
 
         update_clocks();
+
+        set_pin(&LED0, LOW);
+        set_pin(&LED1, LOW);
+        set_pin(&LED2, LOW);
+
+        // master clock oversampled with 16 internal clock ticks
+        if (((edge_counter + master_shift) & 0b1000) && master_clk_state == LOW)
+        {
+            set_pin(&OUT0, HIGH);
+            master_clk_state = HIGH;
+            master_clk_rising = systick_counter;
+        }
+
+        // oversampling can be minimzed by mult_1, resulting in a faster clk
+        if (((edge_counter + mult_1_shift) & (0b1000 >> mult_1)) && mult_1_clk_state == LOW)
+        {
+            set_pin(&OUT1, HIGH);
+            mult_1_clk_state = HIGH;
+            mult_1_clk_rising = systick_counter;
+        }
+
+        // oversampling can be minimzed by mult_2, resulting in a faster clk
+        if (((edge_counter + mult_2_shift) & (0b1000 >> mult_2)) && mult_2_clk_state == LOW)
+        {
+            set_pin(&OUT2, HIGH);
+            mult_2_clk_state = HIGH;
+            mult_2_clk_rising = systick_counter;
+        }
+
+        edge_counter++;
+        if (edge_counter >= (1 << 4))
+        {
+            edge_counter = 0;
+        }
+    }
+
+    if ((systick_counter - master_clk_rising >= master_full_cycle << 3) && master_clk_state == HIGH)
+    {
+        set_pin(&OUT0, LOW);
+        master_clk_state = LOW;
+    }
+
+    if ((systick_counter - mult_1_clk_rising >= (master_full_cycle << 3) >> mult_1) && mult_1_clk_state == HIGH)
+    {
+        set_pin(&OUT1, LOW);
+        mult_1_clk_state = LOW;
+    }
+
+    if ((systick_counter - mult_2_clk_rising >= (master_full_cycle << 3) >> mult_2) && mult_2_clk_state == HIGH)
+    {
+        set_pin(&OUT2, LOW);
+        mult_2_clk_state = LOW;
     }
 
     systick_counter++;
@@ -86,6 +183,7 @@ void setup()
 
     // assign interrupt callbacks
     it_tim3_upd_ovf_brk_handler = tim3_it_callback;
+    it_exti_portd_handler = exti_it_callback;
 }
 
 void start()
