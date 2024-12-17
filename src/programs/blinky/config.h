@@ -9,5 +9,7 @@
 #define OUTPUT1 DIGITAL_OUT
 #define OUTPUT2 DIGITAL_OUT
 
+#define ADC_SAMPLE_RATE 0.1f
+
 #endif
 #endif
