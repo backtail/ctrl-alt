@@ -1,5 +1,3 @@
-#include "stm8s.h"
-
 #include "hw_config.h"
 
 #include "stm8s_clk.h"
