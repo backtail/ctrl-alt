@@ -3,7 +3,7 @@
 
 #include "user_program.h"
 
-#ifdef MASTER_CLK
+#ifdef MASTER_CLOCK
 
 #define OUTPUT0 DIGTAL_OUT
 #define OUTPUT1 DIGTAL_OUT

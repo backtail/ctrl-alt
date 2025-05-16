@@ -2,6 +2,8 @@
 
 #include "hw_config.h"
 
+#include "stm8s_clk.h"
+
 // kernel hardware
 #include "kernel/interrupts.h"
 #include "kernel/hw/gpio.h"

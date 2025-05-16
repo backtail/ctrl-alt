@@ -6,3 +6,10 @@
 
 # Documentation
 docs/html
+
+# Autogeneration
+src/stm8s_conf.h
+
+# Python
+__pycache__
+*.pyc

@@ -20,6 +20,7 @@ uint16_t get_adc(adc_channel_t ch)
 #include "kernel/hw/adc.h"
 
 #include "stm8s_adc1.h"
+#include "stm8s_tim2.h"
 
 #include "hw_config.h"
 #include "kernel/interrupts.h"

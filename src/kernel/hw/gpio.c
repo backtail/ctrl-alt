@@ -1,6 +1,7 @@
 #include "kernel/api/gpio.h"
 
 #include "stm8s_gpio.h"
+#include "stm8s_exti.h"
 
 /// @brief Inits all GPIO input pins to their functions.
 void setup_input_pins(void)
