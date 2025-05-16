@@ -1,7 +1,5 @@
 #include "user_program.h"
 
-#ifdef WAVETABLE_LFO
-
 #include "kernel/interrupts.h"
 
 #include "kernel/api/gpio.h"
@@ -119,5 +117,3 @@ void setup()
 void start() {}
 
 void update() {}
-
-#endif // WAVETABLE_LFO

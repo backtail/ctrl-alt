@@ -1,7 +1,5 @@
 #include "user_program.h"
 
-#ifdef BLINKY
-
 #include "kernel/api/gpio.h"
 #include "kernel/misc/delay.h"
 
@@ -34,5 +32,3 @@ void update()
 
     delay_us(500000);
 }
-
-#endif // BLINKY
