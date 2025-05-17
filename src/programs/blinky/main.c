@@ -16,9 +16,7 @@ void set_all_pins(void)
     set_pin(&OUT2, led_state & 0b100);
 }
 
-void setup()
-{
-}
+void setup() {}
 
 void start() {}
 

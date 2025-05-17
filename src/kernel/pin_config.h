@@ -1,3 +1,10 @@
+/// @file pin_config.h
+/// @brief Pin configuration header file
+/// @details This file contains the pin configuration for the project. It defines
+/// the GPIO ports and pins for various components such as LEDs, switches,
+/// pulse inputs, and pulse outputs. It also defines the pin polarity and
+/// provides a structure to represent the pin configuration.
+
 #ifndef _PIN_CONFIG_H_
 #define _PIN_CONFIG_H_
 
@@ -47,14 +54,9 @@
 /// @brief Defines hardware configuration for a pin
 typedef struct pin
 {
-    /// @brief Hardware inversion, either `NON-INVERSED` or `INVERSED`
-    const bool polarity;
-
-    /// @brief GPIO port
-    GPIO_TypeDef *port;
-
-    /// @brief GPIO pin
-    const uint8_t pin_index;
+    const bool polarity;     ///< Hardware inversion, either `NON-INVERSED` or `INVERSED`
+    GPIO_TypeDef *port;      ///< GPIO port address
+    const uint8_t pin_index; ///< Pin number
 } pin_t;
 
 // INPUT PINS

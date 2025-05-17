@@ -1,3 +1,5 @@
+/// @file interrupts.h
+/// @brief Interrupt handlers for the STM8S microcontroller
 
 #ifndef _KERNEL_INTERRUPTS_
 #define _KERNEL_INTERRUPTS_
@@ -33,5 +35,7 @@ INTERRUPT_HANDLER(EEPROM_EEC_IRQHandler, 24);           /* EEPROM ECC CORRECTION
 extern void (*it_exti_portd_handler)(void);
 extern void (*it_tim1_upd_ovf_brk_handler)(void);
 extern void (*it_tim3_upd_ovf_brk_handler)(void);
+
+/// @todo Add all relevant interrupt handlers to the list
 
 #endif /* _KERNEL_INTERRUPTS_ */

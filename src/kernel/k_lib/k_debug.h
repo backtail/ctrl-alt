@@ -5,4 +5,6 @@
 #include "kernel/api/gpio.h"
 #endif
 
+/// @todo Implement a proper debug function
+
 #endif // _K_DEBUG_H_

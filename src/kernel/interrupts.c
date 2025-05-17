@@ -1,3 +1,6 @@
+/// @file interrupts.c
+/// @brief Interrupt handlers for the STM8S microcontroller
+
 #include "interrupts.h"
 
 /////////////////////////////

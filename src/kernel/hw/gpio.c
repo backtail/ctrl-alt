@@ -3,7 +3,6 @@
 #include "stm8s_gpio.h"
 #include "stm8s_exti.h"
 
-/// @brief Inits all GPIO input pins to their functions.
 void setup_input_pins(void)
 {
     GPIO_Init(MODE_SWITCH.port, MODE_SWITCH.pin_index, GPIO_MODE_IN_PU_NO_IT);
@@ -15,7 +14,6 @@ void setup_input_pins(void)
     EXTI_SetExtIntSensitivity(EXTI_PORT_GPIOD, EXTI_SENSITIVITY_RISE_FALL);
 }
 
-/// @brief Inits all GPIO output pins to their functions.
 void setup_output_pins(void)
 {
     GPIO_Init(LED0.port, LED0.pin_index, GPIO_MODE_OUT_PP_LOW_FAST);

@@ -3,6 +3,7 @@
 
 #include "stdint.h"
 
+/// @brief ADC channel enumeration
 typedef enum adc_channel
 {
     POT0 = 0,
@@ -13,6 +14,9 @@ typedef enum adc_channel
     CV2 = 5,
 } adc_channel_t;
 
+/// @brief ADC configuration structure
+/// @param ch ADC channel to get the value from
+/// @return ADC value from the specified channel (10-bit resolution)
 uint16_t get_adc(adc_channel_t ch);
 
 #endif //_K_API_ADC_

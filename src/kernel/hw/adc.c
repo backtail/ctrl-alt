@@ -4,9 +4,9 @@
 
 #include "kernel/api/adc.h"
 
-#define N_ADC_CH 6
+#define N_ADC_CH 6 ///< max number of ADC channels
 
-uint16_t raw_adc_vals[N_ADC_CH] = {0};
+uint16_t raw_adc_vals[N_ADC_CH] = {0}; ///< raw ADC values from the ADC channels
 
 uint16_t get_adc(adc_channel_t ch)
 {
@@ -27,26 +27,26 @@ uint16_t get_adc(adc_channel_t ch)
 #include "kernel/k_lib/k_timer_calc.h"
 
 // these function pointers are only used by the kernel
-extern void (*it_adc_handler)(void);
-extern void (*it_tim2_upd_ovf_brk_handler)(void);
+extern void (*it_adc_handler)(void);              ///< ADC interrupt handler
+extern void (*it_tim2_upd_ovf_brk_handler)(void); ///< TIM2 update interrupt handler
 
 ////////////////////////////////////////////////////////////////////////////////
 // PRIVATE
 
-// optimised implementation of SPL driver for the case of right alignment
+/// @brief optimised implementation of SPL driver for the case of right alignment
 inline void adc_get_right_aligned(adc_channel_t ch, uint16_t *buf)
 {
     buf[(uint8_t)ch] = *(uint16_t *)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(ch << 1));
 }
 
-// TIM2 triggers the ADC conversion at a rate of `ADC_SAMPLE_RATE`
+/// @brief TIM2 triggers the ADC conversion at a rate of `ADC_SAMPLE_RATE`
 void tim2_it_update_callback(void)
 {
     TIM2_ClearITPendingBit(TIM2_IT_UPDATE);
     ADC1_StartConversion(); // restart ADC conversion
 }
 
-// store converted ADC values and wait for TIM2 to wrap around
+/// @brief store converted ADC values and wait for TIM2 to wrap around
 void adc_eoc_callback(void)
 {
     ADC1_ClearITPendingBit(ADC1_IT_EOC);
@@ -62,7 +62,6 @@ void adc_eoc_callback(void)
 ////////////////////////////////////////////////////////////////////////////////
 // PUBLIC
 
-/// @brief Inits all necessary peripherals and its configurations
 void setup_adc(void)
 {
     // setup ADC config
@@ -90,7 +89,6 @@ void setup_adc(void)
     it_tim2_upd_ovf_brk_handler = tim2_it_update_callback;
 }
 
-/// @brief Starts all necessary peripherals, after interrupts have been enabled
 void start_adc(void)
 {
     TIM2_Cmd(ENABLE);

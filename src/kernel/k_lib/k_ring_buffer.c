@@ -2,8 +2,7 @@
 
 #include "stdbool.h"
 
-// Function to add an element to the ring buffer
-void ring_buffer_put(RingBuffer *rb, uint8_t data)
+void ring_buffer_put(ring_buffer_t *rb, uint8_t data)
 {
     rb->buffer[rb->head] = data;
 
@@ -17,8 +16,7 @@ void ring_buffer_put(RingBuffer *rb, uint8_t data)
     rb->full = (rb->head == rb->tail);
 }
 
-// Function to get an element from the ring buffer
-uint8_t ring_buffer_get(RingBuffer *rb)
+uint8_t ring_buffer_get(ring_buffer_t *rb)
 {
     if (ring_buffer_empty(rb))
     {
@@ -32,8 +30,7 @@ uint8_t ring_buffer_get(RingBuffer *rb)
     return data;
 }
 
-// Function to reset the ring buffer
-void ring_buffer_reset(RingBuffer *rb)
+void ring_buffer_reset(ring_buffer_t *rb)
 {
     if (rb)
     {

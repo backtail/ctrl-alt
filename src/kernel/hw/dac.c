@@ -18,30 +18,37 @@
 #include "kernel/k_lib/k_ring_buffer.h"
 #endif
 
-bool dac_update_flag = 0; // indicates if new dac values need to calculated
-void (*dac_callback)(void) = NULL_POINTER;
+bool dac_update_flag = 0;                  ///< indicates if new dac values need to calculated
+void (*dac_callback)(void) = NULL_POINTER; ///< user callback function to be called when new DAC values are ready
 
 #if OUTPUT0 == ANALOG_OUT
 #if DAC_LATENCY > 1
-RingBuffer dac0_rb = {0};
+ring_buffer_t dac0_rb = {0};
 #endif
 uint8_t dac0_latency_buffer[DAC_LATENCY] = {0}; // holds the ring buffer data
 #endif
 
 #if OUTPUT1 == ANALOG_OUT
 #if DAC_LATENCY > 1
-RingBuffer dac1_rb = {0};
+ring_buffer_t dac1_rb = {0};
 #endif
 uint8_t dac1_latency_buffer[DAC_LATENCY] = {0}; // holds the ring buffer data
 #endif
 
 #if OUTPUT2 == ANALOG_OUT
 #if DAC_LATENCY > 1
-RingBuffer dac2_rb = {0};
+ring_buffer_t dac2_rb = {0};
 #endif
 uint8_t dac2_latency_buffer[DAC_LATENCY] = {0}; // holds the ring buffer data
 #endif
 
+/// @brief Interrupt handler for TIM3 update interrupt
+/// @details Handles the DAC timing update interrupt. This function is called
+/// when the TIM3 update interrupt occurs. It clears the interrupt pending bit
+/// and updates the DAC output values based on the current state of the ring
+/// buffer. If DAC_LATENCY is greater than 1, it also sets a flag to indicate
+/// that new DAC values are ready to be processed.
+/// @param
 void tim3_update_it_callback(void)
 {
     TIM3_ClearITPendingBit(TIM3_IT_UPDATE);

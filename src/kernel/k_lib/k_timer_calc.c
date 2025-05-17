@@ -1,9 +1,5 @@
 #include "k_timer_calc.h"
 
-// @brief Calculates the prescaler and counter value based on the CPU frequency and desired timer update frequency.
-// @param cpu_frequency The CPU frequency in Hz
-// @param desired_frequency The desired timer update frequency in Hz
-// @return `tim_config_t` struct with calculated prescaler bit shift and counter values
 void get_tim_config_prescaler_bit_shifted(uint32_t cpu_frequency, float desired_frequency, uint32_t max_prescaler_bit_shift, uint32_t max_counter_val, tim_config_t *c)
 {
     // configure to slowest possible as default
