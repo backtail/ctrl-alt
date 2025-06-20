@@ -13,3 +13,14 @@ src/stm8s_conf.h
 # Python
 __pycache__
 *.pyc
+
+# VS Code
+.vscode
+
+# KiCad
+production*
+fabrication-toolkit-options.json
+fp-info-cache
+
+#LTSpice
+ltspice/
