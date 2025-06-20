@@ -1,0 +1,16 @@
+<map id="hw_config.h" name="hw_config.h">
+<area shape="rect" id="Node000001" title="Hardware configuration for the project." alt="" coords="327,5,426,31"/>
+<area shape="rect" id="Node000002" href="$wavetable__lfo_2config_8h.html" title=" " alt="" coords="5,79,161,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,33,168,78,166,73,333,28"/>
+<area shape="rect" id="Node000004" href="$blinky_2config_8h.html" title=" " alt="" coords="185,86,368,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="364,33,304,79,301,75,360,29"/>
+<area shape="rect" id="Node000005" href="$sample__hold_2config_8h.html" title=" " alt="" coords="393,79,563,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="393,29,444,68,441,72,390,33"/>
+<area shape="rect" id="Node000006" href="$master__clock_2config_8h.html" title=" " alt="" coords="588,79,763,119"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="421,28,591,73,590,78,419,33"/>
+<area shape="rect" id="Node000003" href="$user__program_8h.html" title="User program header file." alt="" coords="315,167,439,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,116,321,160,320,166,153,121"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="293,109,353,156,349,160,290,114"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="455,121,404,160,401,156,452,117"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="604,121,434,166,433,161,603,116"/>
+</map>

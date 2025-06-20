@@ -1,0 +1,11 @@
+<map id="waveforms.c" name="waveforms.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="117,5,224,31"/>
+<area shape="rect" id="Node000002" href="$waveforms_8h.html" title=" " alt="" coords="5,79,112,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,33,90,73,87,69,151,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="137,79,205,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="173,31,173,65,168,65,168,31"/>
+<area shape="rect" id="Node000005" href="$consts_8h.html" title=" " alt="" coords="229,79,305,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="188,29,241,68,238,72,185,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="23,152,94,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,104,61,138,56,138,56,104"/>
+</map>

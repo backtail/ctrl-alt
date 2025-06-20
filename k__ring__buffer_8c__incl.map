@@ -1,0 +1,12 @@
+<map id="k_ring_buffer.c" name="k_ring_buffer.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="130,5,247,31"/>
+<area shape="rect" id="Node000002" href="$k__ring__buffer_8h.html" title=" " alt="" coords="81,79,200,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,33,158,69,154,66,179,30"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="199,152,282,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="196,30,214,78,235,138,230,140,209,80,191,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,76,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,106,70,146,67,142,123,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,152,175,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="143,104,142,139,136,138,138,104"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="158,102,215,142,212,146,155,106"/>
+</map>

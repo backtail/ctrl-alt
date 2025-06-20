@@ -1,0 +1,7 @@
+<map id="lut_phase_acc_t" name="lut_phase_acc_t">
+<area shape="rect" id="Node000001" title="Phase accumulator with lookup table index." alt="" coords="55,93,181,119"/>
+<area shape="rect" id="Node000002" href="$structphase__acc__t.html" title="Phase accumulator structure." alt="" coords="5,5,108,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,41,112,91,107,94,71,44"/>
+<area shape="rect" id="Node000003" href="$structlut__index__t.html" title="Lookup table index structure." alt="" coords="132,5,227,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,44,129,94,124,91,161,41"/>
+</map>

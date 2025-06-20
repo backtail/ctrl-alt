@@ -1,0 +1,22 @@
+<map id="programs" name="programs">
+<area shape="rect" id="node1" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html" title="kernel" alt="" coords="210,136,273,161"/>
+<area shape="rect" id="node3" href="dir_f0748a8280cf84bd29f70fd9378e2d3e.html" title="blinky" alt="" coords="37,63,99,88"/>
+<area shape="poly" id="edge1" href="dir_000001_000005.html" alt="" coords="90,86,112,96,198,130,196,135,110,101,88,91"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000001_000005.html" title="2" alt="" coords="191,115,200,130"/>
+<area shape="rect" id="node4" href="dir_8689bd97d337287038f1f4e5c1937134.html" title="master_clock" alt="" coords="253,63,363,88"/>
+<area shape="poly" id="edge3" href="dir_000007_000005.html" alt="" coords="299,90,263,128,260,124,295,87"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000007_000005.html" title="5" alt="" coords="266,121,275,136"/>
+<area shape="rect" id="node7" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html" title="lib" alt="" coords="643,136,682,161"/>
+<area shape="poly" id="edge2" href="dir_000007_000006.html" alt="" coords="339,85,375,96,446,108,503,112,560,117,631,132,630,137,559,123,503,118,446,114,374,101,338,91"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000007_000006.html" title="3" alt="" coords="623,118,632,132"/>
+<area shape="rect" id="node5" href="dir_511be134afc48dc31ca7a9101482cf3f.html" title="sample_hold" alt="" coords="123,63,229,88"/>
+<area shape="poly" id="edge4" href="dir_000011_000005.html" alt="" coords="189,87,223,124,220,128,185,90"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000011_000005.html" title="4" alt="" coords="220,110,229,124"/>
+<area shape="rect" id="node6" href="dir_107fbd3d929bad47dcea1abb9ccae621.html" title="wavetable_lfo" alt="" coords="387,63,501,88"/>
+<area shape="poly" id="edge6" href="dir_000014_000005.html" alt="" coords="412,91,287,134,285,129,411,86"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000014_000005.html" title="4" alt="" coords="288,131,298,146"/>
+<area shape="poly" id="edge5" href="dir_000014_000006.html" alt="" coords="481,85,515,96,574,113,631,131,629,136,572,118,514,101,480,91"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000014_000006.html" title="3" alt="" coords="624,117,633,131"/>
+<area shape="rect" id="clust2" href="dir_7156828c8d148b9c7ab68f09210221be.html" alt="" coords="27,52,621,99"/>
+<area shape="rect" id="clust1" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="16,16,632,172"/>
+</map>

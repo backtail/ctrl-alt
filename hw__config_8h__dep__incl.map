@@ -1,0 +1,32 @@
+<map id="hw_config.h" name="hw_config.h">
+<area shape="rect" id="Node000001" title="Hardware configuration for the project." alt="" coords="132,5,231,31"/>
+<area shape="rect" id="Node000002" href="$adc_8c.html" title=" " alt="" coords="5,79,61,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,39,59,81,56,76,144,34"/>
+<area shape="rect" id="Node000003" href="$api_2dac_8h.html" title=" " alt="" coords="203,152,261,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,43,230,151,225,153,187,45"/>
+<area shape="rect" id="Node000008" href="$hw_2dac_8h.html" title=" " alt="" coords="86,79,143,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="163,43,127,80,124,77,159,39"/>
+<area shape="rect" id="Node000009" href="$entry_8c.html" title="Main entry point for the STM8S microcontroller." alt="" coords="111,152,177,177"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="177,45,150,152,144,151,172,44"/>
+<area shape="rect" id="Node000010" href="$pin__config_8h.html" title="Pin configuration header file." alt="" coords="273,79,373,104"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="217,34,301,76,298,81,215,39"/>
+<area shape="rect" id="Node000004" href="$dac_8c.html" title=" " alt="" coords="31,225,87,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="193,185,88,228,86,223,191,180"/>
+<area shape="rect" id="Node000005" href="$sample__hold_2main_8c.html" title=" " alt="" coords="111,225,177,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="209,188,160,227,157,223,206,184"/>
+<area shape="rect" id="Node000006" href="$master__clock_2main_8c.html" title=" " alt="" coords="201,225,268,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="236,191,237,225,232,225,230,191"/>
+<area shape="rect" id="Node000007" href="$wavetable__lfo_2main_8c.html" title=" " alt="" coords="292,225,359,251"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="259,183,312,223,308,227,256,188"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="108,118,66,226,61,224,103,116"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="127,116,142,151,137,153,122,118"/>
+<area shape="rect" id="Node000011" href="$api_2gpio_8h.html" title=" " alt="" coords="293,152,355,177"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="326,118,326,152,321,152,320,118"/>
+<area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="284,185,174,228,172,223,282,180"/>
+<area shape="poly" id="edge16_Node000011_Node000006" title=" " alt="" coords="301,188,251,227,248,223,297,184"/>
+<area shape="poly" id="edge17_Node000011_Node000007" title=" " alt="" coords="327,191,328,225,322,225,322,191"/>
+<area shape="rect" id="Node000012" href="$gpio_8c.html" title=" " alt="" coords="383,225,444,251"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="351,184,400,223,397,227,347,188"/>
+<area shape="rect" id="Node000013" href="$blinky_2main_8c.html" title=" " alt="" coords="468,225,535,251"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="366,180,473,223,471,228,364,185"/>
+</map>

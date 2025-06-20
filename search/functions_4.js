@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['get_5fadc_0',['get_adc',['../api_2adc_8h.html#a82afca1a66e8e556c4f9b647850c0883',1,'get_adc(adc_channel_t ch):&#160;adc.c'],['../adc_8c.html#a82afca1a66e8e556c4f9b647850c0883',1,'get_adc(adc_channel_t ch):&#160;adc.c']]],
+  ['get_5fsample_5fuint8_5fphase_5facc_5flut_1',['get_sample_uint8_phase_acc_lut',['../phase__accumulator_8c.html#aa9e0a65a52ebb6d21c6c228236c33d4e',1,'get_sample_uint8_phase_acc_lut(lut_phase_acc_t *acc, uint8_t *lut):&#160;phase_accumulator.c'],['../phase__accumulator_8h.html#aa9e0a65a52ebb6d21c6c228236c33d4e',1,'get_sample_uint8_phase_acc_lut(lut_phase_acc_t *acc, uint8_t *lut):&#160;phase_accumulator.c']]],
+  ['get_5ftim_5fconfig_5fprescaler_5fbit_5fshifted_2',['get_tim_config_prescaler_bit_shifted',['../k__timer__calc_8c.html#aebe18bb7283a135e45afeb0268f1629d',1,'get_tim_config_prescaler_bit_shifted(uint32_t cpu_frequency, float desired_frequency, uint32_t max_prescaler_bit_shift, uint32_t max_counter_val, tim_config_t *c):&#160;k_timer_calc.c'],['../k__timer__calc_8h.html#aebe18bb7283a135e45afeb0268f1629d',1,'get_tim_config_prescaler_bit_shifted(uint32_t cpu_frequency, float desired_frequency, uint32_t max_prescaler_bit_shift, uint32_t max_counter_val, tim_config_t *c):&#160;k_timer_calc.c']]]
+];

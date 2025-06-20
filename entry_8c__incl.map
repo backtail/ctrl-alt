@@ -1,0 +1,31 @@
+<map id="entry.c" name="entry.c">
+<area shape="rect" id="Node000001" title="Main entry point for the STM8S microcontroller." alt="" coords="327,5,393,31"/>
+<area shape="rect" id="Node000002" href="$hw__config_8h.html" title="Hardware configuration for the project." alt="" coords="460,152,559,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="353,32,335,66,332,85,338,103,360,124,387,140,417,151,447,157,446,162,416,156,385,145,357,129,334,105,327,86,330,65,349,30"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="171,79,271,104"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="339,33,257,75,255,70,337,28"/>
+<area shape="rect" id="Node000009" href="$interrupts_8h.html" title="Interrupt handlers for the STM8S microcontroller." alt="" coords="5,79,147,104"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="328,30,135,78,134,73,326,25"/>
+<area shape="rect" id="Node000011" href="$hw_2gpio_8h.html" title=" " alt="" coords="347,79,477,104"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="371,29,398,66,393,69,366,33"/>
+<area shape="rect" id="Node000012" href="$hw_2adc_8h.html" title=" " alt="" coords="501,79,625,104"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="393,28,518,72,516,77,392,33"/>
+<area shape="rect" id="Node000013" href="$hw_2dac_8h.html" title=" " alt="" coords="649,79,773,104"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="394,23,641,73,640,78,392,29"/>
+<area shape="rect" id="Node000003" href="$wavetable__lfo_2config_8h.html" title=" " alt="" coords="138,225,294,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="467,180,300,224,299,219,466,175"/>
+<area shape="rect" id="Node000005" href="$blinky_2config_8h.html" title=" " alt="" coords="318,233,501,258"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="496,180,437,226,433,222,493,175"/>
+<area shape="rect" id="Node000006" href="$sample__hold_2config_8h.html" title=" " alt="" coords="525,225,696,265"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="526,175,577,215,574,219,523,180"/>
+<area shape="rect" id="Node000007" href="$master__clock_2config_8h.html" title=" " alt="" coords="721,225,895,265"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="553,175,724,219,722,224,552,180"/>
+<area shape="rect" id="Node000004" href="$user__program_8h.html" title="User program header file." alt="" coords="447,313,571,339"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,263,454,307,452,312,286,268"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="426,256,485,303,482,307,422,260"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="588,268,537,307,534,302,585,263"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="737,268,567,312,565,307,736,263"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="39,152,113,177"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="79,104,79,138,73,138,73,104"/>
+<area shape="poly" id="edge16_Node000013_Node000002" title=" " alt="" coords="679,107,556,150,554,145,677,102"/>
+</map>
