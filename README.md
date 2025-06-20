@@ -1,76 +1,82 @@
 # CTRL+ALT
 
-CTRL+ALT is a modular firmware and hardware platform for STM8 microcontrollers, focused on real-time audio, control voltage (CV), and digital/analog signal processing.  
-It is designed for experimentation, modular synths, and embedded control projects.
+CTRL+ALT is a modular firmware and hardware platform for a STM8 microcontroller, focused on real-time audio, control voltage (CV), and lo-fi digital signal processing. It is designed for experimentation, eurorack synths and embedded control projects.
 
-### Features
+Currently, the framework comes with these example projects to help you get started and familiarise yourself on how to access the functionalities:
+- blinky
+- master clock
+- sample & hold
+- wavetable LFO
 
-- Modular program structure: easily switch between different firmware "programs" (e.g., blinky, master clock, sample & hold, wavetable LFO)
-- Real-time analog and digital I/O (ADC/DAC, GPIO)
-- Hardware abstraction for STM8 peripherals
-- Automated dependency management for STM8S standard library includes
-- Build system integration with PlatformIO
+If you fork this repo and come up with your own cool program, feel free to contribute so that everyone can enjoy it!
 
-### Directory Structure
+## Getting Started
 
-- **src/**  
-  Core source code, kernel, hardware abstraction, and user programs.
-  - `kernel/` – Core hardware drivers and kernel logic
-  - `programs/` – Individual firmware programs (e.g., blinky, master_clock)
-- **include/**  
-  Shared headers (for external libraries or cross-program use)
-- **lib/**  
-  Custom libraries and tools (e.g., waveform generation, constants)
-- **scripts/**  
-  Helper scripts for dependency management and build automation
-- **docs/**  
-  Documentation and generated HTML (Doxygen, formulas, etc.)
-- **test/**  
-  Test code and test plans
+### Prerequisites
+
+- [PlatformIO](https://platformio.org/) (for building and uploading firmware)
+- [ctrl+alt](https://maxgenson.de/ctrl-alt/) eurorack module
+- STM8 debug probe
+- [VSCode](https://code.visualstudio.com/) (optional, but really good integration and generally recommended for this project)
+- [VSCodium](https://vscodium.com/) (optional, PlatformIO not natively supported, however workaround [exists](https://www.kentoseth.com/posts/2023/mar/22/install-platformio-ide-in-vscodium-flatpak/))
 
 ### Getting Started
 
-#### Prerequisites
+Install VSCode with PlatformIO Plugin (recommended) or the PlatformIO CLI tool.
 
-- [PlatformIO](https://platformio.org/) (for building and uploading firmware)
-- STM8 toolchain (installed via PlatformIO)
+```sh
+$ git clone https://github.com/backtail/ctrl-alt
+$ cd ctrl-alt
+$ code . # open VSCode
+```
 
-#### Building
+All example projects are located in `src/programs/`.
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/ctrl-alt.git
-    cd ctrl-alt
-    ```
-2. Build the project:
-    ```sh
-    platformio run
-    ```
-3. Upload to your STM8 device:
-    ```sh
-    platformio run --target upload
-    ```
+### Building
 
-#### Switching Programs
+Use the VSCode/Codium PIO task and set the right project/environment. (recommended)
 
-Each firmware "program" (e.g., blinky, master_clock) has its own configuration in `src/programs/<program>/config.h`.  
-To build a different program, set the appropriate build flag in `platformio.ini` or use PlatformIO's environment system.
+or
 
-#### Dependency Management
+```sh
+$ pio run -e <project_name>
+```
 
-The build system uses scripts in [`scripts/`](scripts/) to automatically generate STM8S configuration headers and resolve dependencies based on the selected program.
+### Upload
 
-### Documentation
+Use the VSCode/Codium PIO task and set the right project/environment. (recommended)
 
-- Doxygen-generated docs are in [`docs/html/`](docs/html/)
-- Additional documentation and formulas in [`docs/pages/`](docs/pages/)
+or
 
-### Contributing
+```sh
+$ pio run -e <project_name> -t upload
+```
 
-Pull requests and issues are welcome!  
-Please see [`docs/`](docs/) for more information on contributing and the code structure.
+## The Complementary Hardware
 
----
+This framework is made to run on the 6 HP wide CTRL+ALT eurorack module which can be found under `hardware/`.
 
-© 2024 CTRL+ALT Project
+It features:
+- 3 logic inputs (threshold ~ 2.5V, 12V tolerable) + indicator LEDs
+- 3 CV inputs (0V to 5V, 12V tolerable)
+- 3 knobs
+- up to 3 CV outputs (0V to 5V) or up to 3 logic outputs (0V or 5V) + indicator LEDs -> per output switchable via software
+- 1 toggle switch
+- 1 momentary button switch
 
+![](hardware/frontpanel/ctrl+alt.svg)
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+### Authors
+
+* **[Max Genson](https://www.maxgenson.de/)** - Engineer @ [KOMA Elektronik](https://koma-elektronik.com/new/about-shop/)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+The underlying hardware project source code is licensed under [CERN Open Hardware Licence Version 2 - Strongly Reciprocal](LICENSE_HARDWARE). 
+
+Everything else, including the source code of the firmware for the CTRL+ALT hardware is licensed under [GPL-3.0](LICENSE_SOFTWARE).
