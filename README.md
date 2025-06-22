@@ -15,7 +15,7 @@ If you fork this repo and come up with your own cool program, feel free to contr
 ### Prerequisites
 
 - [PlatformIO](https://platformio.org/) (for building and uploading firmware)
-- [ctrl+alt](https://maxgenson.de/ctrl-alt/) eurorack module
+- [ctrl+alt](https://www.maxgenson.de/ctrl-alt/) eurorack module
 - STM8 debug probe
 - [VSCode](https://code.visualstudio.com/) (optional, but really good integration and generally recommended for this project)
 - [VSCodium](https://vscodium.com/) (optional, PlatformIO not natively supported, however workaround [exists](https://www.kentoseth.com/posts/2023/mar/22/install-platformio-ide-in-vscodium-flatpak/))
@@ -68,13 +68,11 @@ It features:
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md]() for details on our code of conduct, and the process for submitting pull requests to us.
 
 ### Authors
 
 * **[Max Genson](https://www.maxgenson.de/)** - Engineer @ [KOMA Elektronik](https://koma-elektronik.com/new/about-shop/)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 The underlying hardware project source code is licensed under [CERN Open Hardware Licence Version 2 - Strongly Reciprocal](LICENSE_HARDWARE). 
